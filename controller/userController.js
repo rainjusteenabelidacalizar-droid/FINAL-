@@ -22,7 +22,7 @@ exports.createUser=(req,res)=>{
 exports.updateUser=(req,res)=>{
     const {id,name,course,units,tuition}=req.body; 
     connection.query(
-        "UPDATE enrollment_bills SET student_id=?, student_name=?, course_program=?, unit_enrolled=?, tuition_total=?, department=? WHERE id=?",[id,name,course,units,tuition], (err,result)=>{
+        "UPDATE enrollment_bills SET student_id=?, student_name=?, course_program=?, units_enrolled=?, tuition_total=?, department=? WHERE id=?",[id,name,course,units,tuition], (err,result)=>{
         if(err) throw err;
         if(result.affectedRows>0)
             res.json({message:'enrollment updated successfully'});
